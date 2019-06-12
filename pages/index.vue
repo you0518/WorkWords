@@ -61,7 +61,11 @@ export default {
     }
   },
   mounted() {
-    this.color = ImageModule.getImageInfo.color || '#1d53c1'
+    const image = ImageModule.getImageInfo
+    this.color = image.color || '#1d53c1'
+    this.title = image.title
+    this.content = image.content
+    this.auther = image.auther
   },
   methods: {
     async generate() {
@@ -73,7 +77,13 @@ export default {
       if (!output) {
         this.outputText = '画像の生成に失敗しました。'
       }
-      ImageModule.setImage({ url: output, color: this.color })
+      ImageModule.setImage({
+        url: output,
+        color: this.color,
+        title: this.title,
+        content: this.content,
+        auther: this.auther
+      })
       this.$router.push('/generated')
     },
     reset() {

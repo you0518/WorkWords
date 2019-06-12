@@ -3,6 +3,9 @@ import Vuex from 'vuex'
 export interface IImageState {
   url: string
   color: string
+  title: string
+  content: string
+  auther: string
 }
 
 const store = new Vuex.Store({})
@@ -11,7 +14,10 @@ const store = new Vuex.Store({})
 class Image extends VuexModule {
   private ImageInfo: IImageState = {
     url: "",
-    color: ""
+    color: "",
+    title: "",
+    content: "",
+    auther: ""
   }
 
 
