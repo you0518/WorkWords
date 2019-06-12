@@ -2,6 +2,7 @@ import {Mutation, VuexModule, Action, Module, getModule} from "vuex-module-decor
 import Vuex from 'vuex'
 export interface IImageState {
   url: string
+  color: string
 }
 
 const store = new Vuex.Store({})
@@ -10,12 +11,13 @@ const store = new Vuex.Store({})
 class Image extends VuexModule {
   private ImageInfo: IImageState = {
     url: "",
+    color: ""
   }
 
 
   @Mutation
   private SET_IMAGE(ImageInfo: IImageState) {
-    this.ImageInfo.url = ImageInfo.url;
+    this.ImageInfo = ImageInfo;
   }
 
   @Action({})
