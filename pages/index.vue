@@ -16,9 +16,8 @@
           b-form-group(label="著者" label-for="auther")
             b-form-input#auther(v-model="auther")
           b-form-group(label="色" label-for="color")
-            //- b-form-radio(v-for="colorCode in colorCodeList" :key="colorCode" :value="colorCode" v-model="color")
+             b-form-radio(v-for="colorCode in colorCodeList" :key="colorCode" :value="colorCode" v-model="color")
               span(:style="{'background-color': colorCode, 'color': colorCode}") ________________
-            b-input(type="color" v-model="color")
           div
             b-button.mr-2(@click="generate" variant="primary") 生成
             b-button(@click="reset") リセット
@@ -43,6 +42,22 @@ export default {
       color: '',
       output: null,
       outputText: ''
+    }
+  },
+  computed: {
+    colorCodeList() {
+      return [
+        '#800080',
+        '#1d53c1',
+        '#00699e',
+        '#20b2aa',
+        '#027c6c',
+        '#109321',
+        '#adff2f',
+        '#ffd700',
+        '#ffa500',
+        '#dc143c'
+      ]
     }
   },
   mounted() {
