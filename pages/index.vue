@@ -1,6 +1,11 @@
 <template lang="pug">
   b-container(fluid).p-3
     b-row
+      b-col
+        div.p-3 最近話題のやつです。厳重なバリデーションチェックもシェア機能も、ブラウザバリデーションもないです。簡単なジョークグッズだと思ってください。
+           | <br> なお、本アプリを利用して生じたいかなる損害に関しても、責任を負いかねますので、ご了承願います。
+
+    b-row
       b-col(md=4)
         b-form.w-100
           b-form-group(label="タイトル" label-for="title")
