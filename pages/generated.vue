@@ -2,7 +2,7 @@
   div.p-3
     div {{outputText}}
     div
-      nuxt-link(to="/") 戻る
+      b-button(@click="back" variant="warning") 戻る
     div.p-3
       img(:src="output" width="550")
 </template>
@@ -22,6 +22,11 @@ export default Vue.extend({
     this.outputText = this.output
       ? '画像が生成されました。保存して共有しましょう！'
       : '画像が生成されていません。'
+  },
+  methods: {
+    back() {
+      this.$router.go(-1)
+    }
   }
 })
 </script>
